@@ -38057,7 +38057,7 @@ Object.assign( Font.prototype, {
 								cpx0 = laste.x;
 								cpy0 = laste.y;
 
-								
+
 
 							}
 
@@ -38081,7 +38081,7 @@ Object.assign( Font.prototype, {
 								cpx0 = laste.x;
 								cpy0 = laste.y;
 
-								
+
 
 							}
 
@@ -50803,6 +50803,7 @@ var Marker = /*@__PURE__*/(function (superclass) {
           resource :  this.msgMesh,
           material : meshColorMaterial,
         });
+				meshResource.scale.set(message.scale.x,message.scale.y,message.scale.z);
         this.add(meshResource);
         break;
       case MARKER_TRIANGLE_LIST:
@@ -50909,7 +50910,7 @@ var Marker = /*@__PURE__*/(function (superclass) {
           Math.abs(this.msgScale[1] - message.scale.y) > 1.0e-6 ||
           Math.abs(this.msgScale[2] - message.scale.z) > 1.0e-6;
     this.msgScale = [message.scale.x, message.scale.y, message.scale.z];
-
+		console.warn("Scale Changed: ",scaleChanged);
     switch (message.type) {
       case MARKER_CUBE:
       case MARKER_SPHERE:
